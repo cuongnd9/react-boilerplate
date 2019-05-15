@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 import { ClipLoader } from 'react-spinners';
 import PropTypes from 'prop-types';
 
-function Repos({onFetchRepos, repos}) {
+function Repos({ onFetchRepos, repos }) {
   useEffect(() => {
-    onFetchRepos();
+    if (!repos.length) {
+      onFetchRepos();
+    }
   });
 
   return (
@@ -30,11 +32,13 @@ function Repos({onFetchRepos, repos}) {
 
 Repos.propTypes = {
   onFetchRepos: PropTypes.func.isRequired,
-  repos: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    html_url: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired
-  }))
-}
+  repos: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      html_url: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired
+    })
+  )
+};
 
 export default Repos;
