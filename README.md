@@ -7,29 +7,33 @@
 
 > ⚛️🐣 React Boilerplate with Hooks, Redux, Redux-Saga and React-Router.
 
-## Installation
+## How to use?
+
+### Step 1: Clone this project
 
 ```sh
-$ npm i
-# or
+$ git clone https://github.com/cuongw/react-boilerplate.git
+```
+
+### Step 2: Remove `.git` folder
+
+```sh
+$ cd react-boilerplate && rm -rf .git
+```
+
+### Step 3: Install dependencies
+
+```sh
 $ yarn
 ```
 
-## Usage
+### Step 4: Run your project
 
 ```sh
-$ npm start
-# or
 $ yarn start
 ```
 
-## Build
-
-```sh
-$ npm run build
-# or
-$ yarn build
-```
+🙌 Awesome
 
 ## Contributors
 
