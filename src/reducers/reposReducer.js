@@ -1,7 +1,4 @@
-import {
-  FETCH_REPOS_SUCCEEDED,
-  FETCH_REPOS_FAILDED
-} from '../constants/actionTypes';
+import { FETCH_REPOS_SUCCEEDED, FETCH_REPOS_FAILDED } from '../constants/actionTypes';
 
 const reposReducer = (state = [], action) => {
   switch (action.type) {

@@ -5,7 +5,7 @@ import { fetchRepos } from '../services';
 
 function* fetchReposAsync() {
   try {
-    const repos = yield call(fetchRepos);
+    const { data: repos } = yield call(fetchRepos);
     yield put(fetchReposSucceededAction(repos));
   } catch (error) {
     yield put(fetchReposFaildedAction(error));
