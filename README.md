@@ -5,7 +5,7 @@
 [![Hits-of-Code](https://hitsofcode.com/github/cuongw/react-boilerplate)](https://hitsofcode.com/view/github/cuongw/react-boilerplate)
 [![GitHub](https://img.shields.io/github/license/cuongw/react-boilerplate.svg)](https://github.com/cuongw/react-boilerplate/blob/master/LICENSE)
 
-> ⚛️🐣 React Boilerplate with Hooks, Redux, Redux-Saga and React-Router.
+> 🎣🌳 React Boilerplate with Hooks, Redux, Redux-Saga and React-Router.
 
 ## How to use?
 

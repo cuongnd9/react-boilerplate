@@ -60,6 +60,16 @@
     "function-paren-newline": [0],
     "no-restricted-globals": [0],
     "require-yield": [1],
-    "compat/compat": "error"
+    "compat/compat": "error",
+    "jsx-a11y/label-has-associated-control": [ "error", {
+      "required": {
+        "some": [ "nesting", "id"  ]
+      }
+    }],
+    "jsx-a11y/label-has-for": [ "error", {
+      "required": {
+        "some": [ "nesting", "id"  ]
+      }
+    }]
   }
 }
