@@ -1,7 +1,7 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
-import { FETCH_REPOS } from '../constants/actionTypes';
-import { fetchReposSucceededAction, fetchReposFaildedAction } from '../actions';
-import { fetchRepos } from '../services';
+import { FETCH_REPOS } from 'constants/actionTypes';
+import { fetchReposSucceededAction, fetchReposFaildedAction } from 'actions';
+import { fetchRepos } from 'services';
 
 function* fetchReposAsync() {
   try {
