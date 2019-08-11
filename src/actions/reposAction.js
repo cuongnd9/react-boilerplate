@@ -1,4 +1,4 @@
-import { FETCH_REPOS, FETCH_REPOS_SUCCEEDED, FETCH_REPOS_FAILDED } from '../constants/actionTypes';
+import { FETCH_REPOS, FETCH_REPOS_SUCCEEDED, FETCH_REPOS_FAILDED } from 'constants/actionTypes';
 
 export const fetchReposAction = () => ({
   type: FETCH_REPOS,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { ReposContainer, RepoContainer } from '../containers';
-import { Navbar } from '../components';
+import { ReposContainer, RepoContainer } from 'containers';
+import { Navbar } from 'components';
 
 function Main() {
   return (

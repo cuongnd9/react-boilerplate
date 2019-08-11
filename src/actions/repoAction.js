@@ -3,7 +3,7 @@ import {
   FETCH_REPO_SUCCEEDED,
   FETCH_REPO_FAILDED,
   CLEAR_REPO,
-} from '../constants/actionTypes';
+} from 'constants/actionTypes';
 
 export const fetchRepoAction = name => ({
   type: FETCH_REPO,
