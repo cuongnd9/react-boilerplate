@@ -1,4 +1,9 @@
-import { FETCH_REPO, FETCH_REPO_SUCCEEDED, FETCH_REPO_FAILDED } from '../constants/actionTypes';
+import {
+  FETCH_REPO,
+  FETCH_REPO_SUCCEEDED,
+  FETCH_REPO_FAILDED,
+  CLEAR_REPO,
+} from '../constants/actionTypes';
 
 export const fetchRepoAction = name => ({
   type: FETCH_REPO,
@@ -13,4 +18,8 @@ export const fetchRepoSucceededAction = repo => ({
 export const fetchRepoFaildedAction = error => ({
   type: FETCH_REPO_FAILDED,
   payload: error,
+});
+
+export const clearRepoAction = () => ({
+  type: CLEAR_REPO,
 });

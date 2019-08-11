@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import { ClipLoader } from 'react-spinners';
 import PropTypes from 'prop-types';
 
-function Repo({ onFetchRepo, repo, match }) {
+function Repo({ onFetchRepo, onClearRepo, repo, match }) {
   useEffect(() => {
     onFetchRepo(match.params.name);
-  }, [onFetchRepo, match.params.name]);
+    return () => onClearRepo();
+  }, [onFetchRepo, match.params.name, onClearRepo]);
 
   return (
     <div className="container p-5">
@@ -28,6 +29,7 @@ Repo.defaultProps = {
 
 Repo.propTypes = {
   onFetchRepo: PropTypes.func.isRequired,
+  onClearRepo: PropTypes.func.isRequired,
   repo: PropTypes.shape({
     name: PropTypes.string,
     html_url: PropTypes.string,
