@@ -1,3 +1,4 @@
+export { default as Login } from './Login';
 export { default as Repos } from './Repos';
 export { default as Repo } from './Repo';
 export { default as Navbar } from './Navbar';
