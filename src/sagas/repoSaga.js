@@ -1,9 +1,9 @@
-import { all, call, put, takeLatest, take } from 'redux-saga/effects';
+import { all, call, put, takeEvery } from 'redux-saga/effects';
 import { FETCH_REPO } from '../constants/actionTypes';
 import { fetchRepoSucceededAction, fetchRepoFaildedAction } from '../actions';
 import { fetchRepo } from '../services';
 
-function* fetchRepoAsync(name) {
+function* fetchRepoAsync({ payload: name }) {
   try {
     const { data: repo } = yield call(fetchRepo, name);
     yield put(fetchRepoSucceededAction(repo));
@@ -13,10 +13,7 @@ function* fetchRepoAsync(name) {
 }
 
 function* watchFetchRepoAsync() {
-  while (true) {
-    const { payload } = yield take(FETCH_REPO);
-    yield takeLatest(FETCH_REPO, fetchRepoAsync, payload);
-  }
+  yield takeEvery(FETCH_REPO, fetchRepoAsync);
 }
 
 export default function* repoSaga() {
