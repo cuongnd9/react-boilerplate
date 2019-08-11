@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { Repo } from '../components';
-import { fetchRepoAction, clearRepoAction } from '../actions';
+import { Repo } from 'components';
+import { fetchRepoAction, clearRepoAction } from 'actions';
 
 const mapStateToProps = state => ({
   repo: state.repo,

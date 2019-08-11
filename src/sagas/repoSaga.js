@@ -1,7 +1,7 @@
 import { all, call, put, takeEvery } from 'redux-saga/effects';
-import { FETCH_REPO } from '../constants/actionTypes';
-import { fetchRepoSucceededAction, fetchRepoFaildedAction } from '../actions';
-import { fetchRepo } from '../services';
+import { FETCH_REPO } from 'constants/actionTypes';
+import { fetchRepoSucceededAction, fetchRepoFaildedAction } from 'actions';
+import { fetchRepo } from 'services';
 
 function* fetchRepoAsync({ payload: name }) {
   try {

@@ -1,4 +1,4 @@
-import { FETCH_REPO_SUCCEEDED, FETCH_REPO_FAILDED, CLEAR_REPO } from '../constants/actionTypes';
+import { FETCH_REPO_SUCCEEDED, FETCH_REPO_FAILDED, CLEAR_REPO } from 'constants/actionTypes';
 
 const repoReducer = (state = {}, action) => {
   switch (action.type) {
