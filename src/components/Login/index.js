@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
+import './style.css';
 
 function Login({ location }) {
   const { from } = location.state || { from: { pathname: '/' } };

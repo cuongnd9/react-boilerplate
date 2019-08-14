@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ClipLoader } from 'react-spinners';
 import PropTypes from 'prop-types';
+import './style.css';
 
 function Repos({ onFetchRepos, repos }) {
   useEffect(() => {
