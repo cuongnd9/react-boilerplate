@@ -1,5 +1,5 @@
-import axios from 'axios';
+import request from 'utils/request';
 
 export function fetchRepos() {
-  return axios.get('https://api.github.com/users/cuongw/repos');
+  return request('https://api.github.com/users/cuongw/repos');
 }
