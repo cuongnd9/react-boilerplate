@@ -27,6 +27,9 @@ function Navbar() {
             </Link>
           </li>
         </ul>
+        <Link className="btn btn-outline-primary" to="/login">
+          Login
+        </Link>
       </div>
     </nav>
   );
