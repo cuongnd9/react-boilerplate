@@ -4,16 +4,10 @@ import rootReducer from 'reducers';
 import rootSaga from 'sagas';
 
 const sagaMiddleware = createSagaMiddleware();
-const reduxDevTools =
-  // eslint-disable-next-line no-underscore-dangle
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-const store = createStore(
-  rootReducer,
-  compose(
-    applyMiddleware(sagaMiddleware),
-    reduxDevTools,
-  ),
-);
+// eslint-disable-next-line no-underscore-dangle
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(sagaMiddleware)));
 sagaMiddleware.run(rootSaga);
 
 export default store;
