@@ -11,15 +11,16 @@
     "jest": true
   },
   "rules": {
-    "generator-star-spacing": [0],
-    "consistent-return": [0],
-    "react/forbid-prop-types": [0],
-    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
-    "global-require": [1],
-    "import/prefer-default-export": [0],
-    "react/jsx-no-bind": [0],
-    "react/prop-types": [0],
-    "react/prefer-stateless-function": [0],
+    "import/prefer-default-export": ["off"],
+    "import/no-unresolved": ["off"],
+    "import/no-extraneous-dependencies": ["off"],
+    "import/extensions": ["off"],
+    "react/forbid-prop-types": ["off"],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js"] }],
+    "react/jsx-no-bind": ["off"],
+    "react/prop-types": ["off"],
+    "react/jsx-one-expression-per-line": ["off"],
+    "react/prefer-stateless-function": ["off"],
     "react/jsx-wrap-multilines": [
       "error",
       {
@@ -32,20 +33,37 @@
         "prop": "ignore"
       }
     ],
-    "no-else-return": [0],
-    "no-restricted-syntax": [0],
-    "import/no-extraneous-dependencies": [0],
-    "no-use-before-define": [0],
-    "jsx-a11y/no-static-element-interactions": [0],
-    "jsx-a11y/no-noninteractive-element-interactions": [0],
-    "jsx-a11y/click-events-have-key-events": [0],
-    "jsx-a11y/anchor-is-valid": [0],
-    "no-nested-ternary": [0],
-    "arrow-body-style": [0],
-    "import/extensions": [0],
-    "no-bitwise": [0],
-    "no-cond-assign": [0],
-    "import/no-unresolved": [0],
+    "jsx-a11y/no-static-element-interactions": ["off"],
+    "jsx-a11y/no-noninteractive-element-interactions": ["off"],
+    "jsx-a11y/click-events-have-key-events": ["off"],
+    "jsx-a11y/anchor-is-valid": ["off"],
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "compat/compat": "error",
+    "generator-star-spacing": ["off"],
+    "consistent-return": ["off"],
+    "global-require": ["warn"],
+    "no-else-return": ["off"],
+    "no-restricted-syntax": ["off"],
+    "no-use-before-define": ["off"],
+    "no-nested-ternary": ["off"],
+    "arrow-body-style": ["off"],
+    "no-bitwise": ["off"],
+    "no-cond-assign": ["off"],
     "comma-dangle": [
       "error",
       {
@@ -56,21 +74,9 @@
         "functions": "ignore"
       }
     ],
-    "object-curly-newline": [0],
-    "function-paren-newline": [0],
-    "no-restricted-globals": [0],
-    "require-yield": [1],
-    "compat/compat": "error",
-    "jsx-a11y/label-has-associated-control": [ "error", {
-      "required": {
-        "some": [ "nesting", "id"  ]
-      }
-    }],
-    "jsx-a11y/label-has-for": [ "error", {
-      "required": {
-        "some": [ "nesting", "id"  ]
-      }
-    }],
-    "react/jsx-one-expression-per-line": [0]
+    "object-curly-newline": ["off"],
+    "function-paren-newline": ["off"],
+    "no-restricted-globals": ["off"],
+    "require-yield": ["warn"]
   }
 }
