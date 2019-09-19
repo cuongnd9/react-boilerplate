@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import { Navbar } from 'components';
+import { BasicLayout } from 'components';
 import './style.css';
 
 function NotFound() {
   return (
-    <>
-      <Navbar />
+    <BasicLayout>
       <div className="notfound">
         <div className="notfound-404">
           <h1>404</h1>
@@ -17,7 +16,7 @@ function NotFound() {
           temporarily unavailable. <Link to="/">Return to homepage</Link>
         </p>
       </div>
-    </>
+    </BasicLayout>
   );
 }
 
