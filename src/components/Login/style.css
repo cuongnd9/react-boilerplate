@@ -1,1 +1,39 @@
-/* Insert your style */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.login {
+  display: flex;
+  width: 350px;
+  flex-direction: column;
+}
+
+.login-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: 500ms all ease-in-out;
+  margin-bottom: 50px;
+  margin-top: -100px;
+}
+
+.login-logo-img {
+  margin-right: 20px;
+  height: 40px;
+}
+
+.login-logo-text-highlight {
+  color: #f27c52;
+  margin-right: 5px;
+}
+
+.login-logo-text {
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  transition: 250ms all ease-in-out;
+}

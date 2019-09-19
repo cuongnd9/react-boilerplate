@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { Repo } from 'components';
+import { RepoDetail } from 'components';
 import { fetchRepoAction, clearRepoAction } from 'actions';
 
 const mapStateToProps = state => ({
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Repo);
+)(RepoDetail);

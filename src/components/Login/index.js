@@ -1,39 +1,75 @@
-import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+/* eslint-disable no-console */
+import React from 'react';
+import { Form, Icon, Input, Button, Checkbox, Typography } from 'antd';
+import ReactCanvasNest from 'react-canvas-nest';
 import './style.css';
 
-function Login({ location }) {
-  const { from } = location.state || { from: { pathname: '/' } };
-  const [isRedirect, setIsRedirect] = useState(false);
-  return isRedirect ? (
-    <Redirect to={from} />
-  ) : (
-    <form className="col-4 offset-4 mt-5">
-      <p className="h3 text-success my-4">Login</p>
-      <div className="form-group">
-        <label htmlFor="email">Email address:</label>
-        <input type="email" className="form-control" id="email" />
+const { Text } = Typography;
+
+function Login({ form }) {
+  function handleSubmit(event) {
+    event.preventDefault();
+    form
+      .validateFields()
+      .then(values => console.log(values))
+      .catch(error => console.log(error));
+  }
+  const { getFieldDecorator } = form;
+
+  return (
+    <div className="login-container">
+      <div className="login-logo">
+        <img
+          alt="React Boilerplate"
+          src={`${process.env.PUBLIC_URL}/favicon.png`}
+          className="login-logo-img"
+        />
+        <Text className="login-logo-text">
+          <span className="login-logo-text-highlight">React</span>
+          Boilerplate
+        </Text>
       </div>
-      <div className="form-group">
-        <label htmlFor="pwd">Password:</label>
-        <input type="password" className="form-control" id="pwd" />
-      </div>
-      <div className="form-group form-check">
-        <label className="form-check-label">
-          <input className="form-check-input" type="checkbox" /> Remember me
-        </label>
-      </div>
-      <button
-        type="button"
-        className="btn btn-primary"
-        onClick={() => {
-          setIsRedirect(true);
-        }}
-      >
-        Login
-      </button>
-    </form>
+      <Form className="login" onSubmit={handleSubmit}>
+        <Form.Item>
+          {getFieldDecorator('username', {
+            rules: [{ required: true, message: 'Please input your username!' }],
+          })(
+            <Input
+              prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+              placeholder="Username"
+            />,
+          )}
+        </Form.Item>
+        <Form.Item>
+          {getFieldDecorator('password', {
+            rules: [{ required: true, message: 'Please input your Password!' }],
+          })(
+            <Input.Password
+              prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+              placeholder="Password"
+            />,
+          )}
+        </Form.Item>
+        <Form.Item>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            {getFieldDecorator('remember', {
+              valuePropName: 'checked',
+              initialValue: true,
+            })(<Checkbox>Remember me</Checkbox>)}
+            <a href="https://github.com/x-store">Forgot password</a>
+          </div>
+          <Button type="primary" htmlType="submit" style={{ display: 'block', width: '100%' }}>
+            Log in
+          </Button>
+          Or <a href="https://github.com/x-store">register now!</a>
+        </Form.Item>
+      </Form>
+      <ReactCanvasNest
+        config={{ lineColor: ' 242, 125, 82 ', pointColor: ' 24, 144, 255 ', count: '50' }}
+        style={{ backgroundColor: '#f9f6f2' }}
+      />
+    </div>
   );
 }
 
-export default Login;
+export default Form.create({ name: 'login' })(Login);

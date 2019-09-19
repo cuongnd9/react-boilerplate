@@ -1,1 +1,84 @@
-/* Insert your style */
+.menu {
+  display: flex;
+  padding: 16px 115px;
+  box-shadow: 2px 4px 8px rgba(211, 211, 211, 0.5);
+  border: none;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 40%;
+  transition: 500ms all ease-in-out;
+}
+
+.logo-img {
+  margin-right: 20px;
+  height: 40px;
+}
+
+.logo-text-highlight {
+  color: #f27c52;
+  margin-right: 5px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  transition: 250ms all ease-in-out;
+}
+
+.logo-text:hover {
+  text-shadow: 1px 1px 1px lightgrey;
+}
+
+.menu-items {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 500ms all ease-in-out;
+}
+
+.menu-item {
+  font-size: 15px;
+  margin: 0 30px;
+  color: #5f5f7f;
+  transition: 250ms all ease-in-out;
+}
+
+.menu-item:hover {
+  color: #5f5f7f;
+  text-shadow: 1px 1px 1px lightgrey;
+}
+
+.menu-item-active,
+.menu-item-active:hover {
+  color: #f27c52;
+}
+
+.menu-icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu-icons-item {
+  cursor: pointer;
+  font-size: 20px;
+  color: #5f5f7f;
+  transition: 250ms all ease-in-out;
+  margin-left: 20px;
+}
+
+.menu-icons-item:hover {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.search-input {
+  margin-left: 20px;
+  height: 40px;
+  transition: 500ms all ease-in-out;
+}
