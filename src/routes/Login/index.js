@@ -1,5 +1,5 @@
-/* eslint-disable no-console */
 import React from 'react';
+import { navigate } from '@reach/router';
 import { Form, Icon, Input, Button, Checkbox, Typography } from 'antd';
 import ReactCanvasNest from 'react-canvas-nest';
 import './style.css';
@@ -9,10 +9,7 @@ const { Text } = Typography;
 function Login({ form }) {
   function handleSubmit(event) {
     event.preventDefault();
-    form
-      .validateFields()
-      .then(values => console.log(values))
-      .catch(error => console.log(error));
+    form.validateFields().then(() => navigate('/'));
   }
   const { getFieldDecorator } = form;
 
