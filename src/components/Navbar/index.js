@@ -77,7 +77,9 @@ class Navbar extends Component {
             onClick={this.handleToggleSearchInput}
           />
           <Badge dot>
-            <Icon type="ant-design" className="menu-icons-item" />
+            <Link to="/login">
+              <Icon type="ant-design" className="menu-icons-item" />
+            </Link>
           </Badge>
         </div>
       </nav>
