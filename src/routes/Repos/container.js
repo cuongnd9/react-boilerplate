@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
-import { Repos } from 'components';
-import { fetchReposAction } from 'actions';
+import { fetchAction } from 'models/repos/actions';
+import Repos from './component';
 
 const mapStateToProps = state => ({
   repos: state.repos,
 });
 
 const mapDispatchToProps = dispatch => ({
-  onFetchRepos: () => dispatch(fetchReposAction()),
+  onFetchRepos: () => dispatch(fetchAction()),
 });
 
 export default connect(
