@@ -6,7 +6,7 @@ import './style.css';
 
 const { Title, Text } = Typography;
 
-function Repo({ onFetchRepo, onClearRepo, repo, match }) {
+function RepoDetail({ onFetchRepo, onClearRepo, repo, match }) {
   useEffect(() => {
     onFetchRepo(match.params.name);
     return () => onClearRepo();
@@ -41,11 +41,11 @@ function Repo({ onFetchRepo, onClearRepo, repo, match }) {
   );
 }
 
-Repo.defaultProps = {
+RepoDetail.defaultProps = {
   repo: {},
 };
 
-Repo.propTypes = {
+RepoDetail.propTypes = {
   onFetchRepo: PropTypes.func.isRequired,
   onClearRepo: PropTypes.func.isRequired,
   repo: PropTypes.shape({
@@ -55,4 +55,4 @@ Repo.propTypes = {
   }),
 };
 
-export default Repo;
+export default RepoDetail;

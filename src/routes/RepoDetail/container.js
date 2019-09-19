@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
-import { RepoDetail } from 'components';
-import { fetchRepoAction, clearRepoAction } from 'actions';
+import { fetchAction, clearAction } from 'models/repo/actions';
+import RepoDetail from './component';
 
 const mapStateToProps = state => ({
   repo: state.repo,
 });
 
 const mapDispatchToProps = dispatch => ({
-  onFetchRepo: name => dispatch(fetchRepoAction(name)),
-  onClearRepo: () => dispatch(clearRepoAction()),
+  onFetchRepo: name => dispatch(fetchAction(name)),
+  onClearRepo: () => dispatch(clearAction()),
 });
 
 export default connect(
