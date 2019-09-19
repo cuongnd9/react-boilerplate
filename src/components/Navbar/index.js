@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Typography, Badge, Icon, Input } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link } from '@reach/router';
 import './style.css';
 
 const { Text } = Typography;

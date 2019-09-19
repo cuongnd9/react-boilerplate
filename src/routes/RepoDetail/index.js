@@ -1,22 +1,22 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Row, Col, Breadcrumb, Icon, Typography, Spin } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link } from '@reach/router';
 import { Navbar } from 'components';
 import { fetchAction, clearAction } from 'models/repo/actions';
 import './style.css';
 
 const { Title, Text } = Typography;
 
-function RepoDetail({ match }) {
+function RepoDetail({ name }) {
   const dispatch = useDispatch();
 
   const repo = useSelector(state => state.repo);
 
   useEffect(() => {
-    dispatch(fetchAction(match.params.name));
+    dispatch(fetchAction(name));
     return () => dispatch(clearAction());
-  }, [dispatch, match.params.name]);
+  }, [dispatch, name]);
 
   return (
     <>

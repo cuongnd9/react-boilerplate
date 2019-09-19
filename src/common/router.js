@@ -1,15 +1,15 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Router } from '@reach/router';
 import { Login, Repos, RepoDetail, NotFound } from 'routes';
 
 function RouterConfig() {
   return (
-    <Switch>
-      <Route path="/login" component={Login} />
-      <Route exact path="/" component={Repos} />
-      <Route path="/:name" component={RepoDetail} />
-      <Route component={NotFound} />
-    </Switch>
+    <Router>
+      <Login path="/login" />
+      <Repos path="/" />
+      <RepoDetail path="/:name" />
+      <NotFound default />
+    </Router>
   );
 }
 
