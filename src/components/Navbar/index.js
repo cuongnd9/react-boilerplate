@@ -1,38 +1,88 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Typography, Badge, Icon, Input } from 'antd';
 import { Link } from 'react-router-dom';
 import './style.css';
 
-function Navbar() {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand text-success" to="/">
-        React Boilerplate
-      </Link>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon" />
-      </button>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
-            <Link className="nav-link" to="/">
-              Home <span className="sr-only">(current)</span>
+const { Text } = Typography;
+
+class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visibleSearch: false,
+    };
+  }
+
+  handleToggleSearchInput = () => {
+    this.setState(state => ({ visibleSearch: !state.visibleSearch }));
+  };
+
+  render() {
+    const { visibleSearch } = this.state;
+    return (
+      <nav className="menu">
+        {!visibleSearch && (
+          <Link to="/" className="logo">
+            <img
+              alt="React Boilerplate"
+              src={`${process.env.PUBLIC_URL}/favicon.png`}
+              className="logo-img"
+            />
+            <Text className="logo-text">
+              <span className="logo-text-highlight">React</span>
+              Boilerplate
+            </Text>
+          </Link>
+        )}
+        {!visibleSearch && (
+          <div className="menu-items">
+            <Link className="menu-item menu-item-active" to="/">
+              React
             </Link>
-          </li>
-        </ul>
-        <Link className="btn btn-outline-primary" to="/login">
-          Login
-        </Link>
-      </div>
-    </nav>
-  );
+            <Link className="menu-item" to="/">
+              Redux
+            </Link>
+            <Link className="menu-item" to="/">
+              Hooks
+            </Link>
+            <Link className="menu-item" to="/">
+              Graphql
+            </Link>
+            <Link className="menu-item" to="/">
+              Ant Design
+            </Link>
+          </div>
+        )}
+        <div className="menu-icons" style={{ width: visibleSearch ? '100%' : '40%' }}>
+          {visibleSearch && (
+            <>
+              <Icon
+                type="search"
+                className="menu-icons-item"
+                style={{ marginLeft: '0px', marginRight: '20px' }}
+              />
+              <Input
+                type="text"
+                placeholder="Enter your keyword..."
+                size="large"
+                className="search-input"
+                required
+              />
+            </>
+          )}
+          <Icon
+            type={visibleSearch ? 'close' : 'search'}
+            className="menu-icons-item"
+            style={{ color: visibleSearch && '#f27c52' }}
+            onClick={this.handleToggleSearchInput}
+          />
+          <Badge dot>
+            <Icon type="ant-design" className="menu-icons-item" />
+          </Badge>
+        </div>
+      </nav>
+    );
+  }
 }
 
 export default Navbar;

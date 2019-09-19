@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
+import { Row, Col, Typography, Card, Spin } from 'antd';
 import { Link } from 'react-router-dom';
-import { ClipLoader } from 'react-spinners';
 import PropTypes from 'prop-types';
 import './style.css';
+
+const { Title } = Typography;
 
 function Repos({ onFetchRepos, repos }) {
   useEffect(() => {
@@ -10,21 +12,26 @@ function Repos({ onFetchRepos, repos }) {
   }, [onFetchRepos]);
 
   return (
-    <div className="container p-5">
-      <h4 className="text-danger mb-3">My Repos</h4>
-      {repos.length === 0 && <ClipLoader sizeUnit="px" size={45} color="#123abc" />}
-      {repos.length !== 0 &&
-        repos.map(repo => (
-          <div className="d-flex border-bottom mb-3" key={repo.id}>
-            <div className="w-100">
-              <Link className="text-primary h4" to={`/${repo.name}`}>
-                <u>{repo.name}</u>
-              </Link>
-              <p className="text-dark">{repo.description}</p>
-            </div>
-          </div>
-        ))}
-    </div>
+    <Row>
+      <Col span={20} offset={2} style={{ paddingTop: '50px' }}>
+        <Title level={4}>My Repos</Title>
+        {repos.length === 0 && <Spin />}
+        <Row gutter={16}>
+          {repos.length !== 0 &&
+            repos.map(repo => (
+              <Col key={repo.id} span={12}>
+                <Card
+                  title={repo.name}
+                  extra={<Link to={`/${repo.name}`}>More</Link>}
+                  style={{ marginBottom: '15px' }}
+                >
+                  <p>{repo.description}</p>
+                </Card>
+              </Col>
+            ))}
+        </Row>
+      </Col>
+    </Row>
   );
 }
 

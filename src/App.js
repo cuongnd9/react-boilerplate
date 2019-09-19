@@ -1,6 +1,6 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import RootRoute from 'routes';
+import 'antd/dist/antd.css';
 
 function App() {
   return <RootRoute />;
